@@ -27,19 +27,21 @@ MVP: My App should allow the user to input a search query to search for articles
 
 Post-MVP: If things are running above schedule I would like to implement a weather API as well that displays the weather of whatever city that is typed into a search bar. I would also like to add animations to the flexboxes so they gradually expand when clicked on to display the description. 
 
-Goals: |  Day | Deliverable | Status
-|---|---| ---|
-|April 16-18| Prompt , Wireframes , PM , Timeframes | Incomplete
-|April 19| Project Approval | Incomplete
-|April 20| Application Layout (HTML, CSS, etc.) | Incomplete
-|April 20| JS Functionality | Incomplete
-|April 21| Finalizations with Flexbox | Incomplete
-|April 22| MVP | Incomplete
-|April 23| Presentations | Incomplete
+Goals: 
+| Day | Deliverable | Status |
+|---|---|---|
+|April 16-18| Prompt , Wireframes , PM , Timeframes | Incomplete |
+|April 19| Project Approval | Incomplete |
+|April 20| Application Layout (HTML, CSS, etc.) | Incomplete |
+|April 20| JS Functionality | Incomplete |
+|April 21| Finalizations with Flexbox | Incomplete |
+|April 22| MVP | Incomplete |
+|April 23| Presentations | Incomplete |
 
 Priority Matrix: [Priority Matrix](https://whimsical.com/whats-news-Asry2bvQrAczWPWKrN8Ar3)
 
-Timeframes: | Component | Priority | Estimated Time | Time Invested | Actual Time |
+Timeframes:
+| Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: | :---: | :---: | :---: |
 | Basic HTML | H | 1 hrs | hrs | hrs |
 | HTML for Page Layout  | H | 1 hrs | hrs | hrs |
