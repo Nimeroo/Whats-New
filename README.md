@@ -51,16 +51,15 @@ Priority Matrix: [Priority Matrix](https://whimsical.com/whats-news-Asry2bvQrAcz
 Timeframes:
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: | :---: | :---: | :---: |
-| Basic HTML | H | 1 hrs | hrs | hrs |
-| HTML for Page Layout  | H | 1 hrs | hrs | hrs |
-| Basic CSS | H | 1.5 hrs | hrs | hrs |
-| Use axios to retrieve API data | H | 0.5 hrs | hrs | hrs |
-| Assign Variables to API Endpoints | H | 1 hrs | hrs | hrs |
+| HTML for Page Layout | H | 2 hrs | hrs | hrs |
+| Basic CSS | H | 2 hrs | hrs | hrs |
+| Use axios to retrieve API data and explore endpoints| H | 3 hrs | hrs | hrs |
+| Assign Variables to API Endpoints | H | 2 hrs | hrs | hrs |
 | Organizing the articles with functions | H | 3 hrs | hrs | hrs |
 | Manipulate the DOM with JS | H | 3 hrs | hrs | hrs |
 | Add Event Listeners to each button | H | 3 hrs | hrs | hrs |
 | Add function to reset webpage when there is a new search | H | 3 hrs | hrs | hrs |
 | Create Flexboxes that appear for each article | H | 3 hrs | hrs | hrs |
-| Add Event Listeners to each Flexbox so they display the desciption of the article when clicked |H | 3 hrs | hrs | hrs |
+| Add Event Listeners to each article so they display the desciption of the article when clicked |H | 3 hrs | hrs | hrs |
 | Media Query Desktop to mobile | H | 4 hrs| hrs | hrs |
-| Total | H | 26.5 hrs| hrs | hrs |
+| Total | H | 32 hrs| hrs | hrs |
