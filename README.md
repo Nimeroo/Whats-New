@@ -23,9 +23,17 @@ API Snippet: `{
 [Webpage Wireframe](https://wireframe.cc/vUQURj)
 [Mobile Wireframe](https://wireframe.cc/CMuJy3)
 
-MVP: My App should allow the user to input a search query to search for articles and be able to sort through the articles based on relevancy and popularity and display them on my webpage or phone using flexbox. Clicking on one of the flexboxes should increase the size and display a description of the article as well as link the user to the webpage of the actual article. 
+MVP: 
 
-Post-MVP: If things are running above schedule I would like to implement a weather API as well that displays the weather of whatever city that is typed into a search bar. I would also like to add animations to the flexboxes so they gradually expand when clicked on to display the description. 
+- Search News Articles by user input.
+- Clicking on displayed articles displays additional information.
+- Removing articles after new search and removing articles that were not clicked.
+
+Post-MVP: 
+
+- Add weather API.
+- Filter by relevancy, popularity, ... etc.
+- additional UI and animations.
 
 Goals: 
 | Day | Deliverable | Status |
