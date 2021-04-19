@@ -40,7 +40,7 @@ Goals: |  Day | Deliverable | Status
 Priority Matrix: [Priority Matrix](https://whimsical.com/whats-news-Asry2bvQrAczWPWKrN8Ar3)
 
 Timeframes: | Component | Priority | Estimated Time | Time Invested | Actual Time |
-| --- | :---: |  :---: | :---: | :---: |
+| --- | :---: | :---: | :---: | :---: |
 | Basic HTML | H | 1 hrs | hrs | hrs |
 | HTML for Page Layout  | H | 1 hrs | hrs | hrs |
 | Basic CSS | H | 1.5 hrs | hrs | hrs |
