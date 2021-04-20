@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  font-family: Roboto, Ariel;
+  background-color: bisque;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  background-color: chocolate;
+  border: solid;
+  border-width: 10px;
+  border-color: black; 
+}
+
+#home {
+  height: 20px;
+  width: 50px;
+  border: solid;
+  border-width: 2px;
+  border-color: black;
+  border-radius: 20px;
+  background-color: burlywood;
+  margin-right: 100px;
+}
+
+#home:hover {
+  background-color: blanchedalmond;
+  transition: 1s;
+  cursor: pointer;
+}
+
+#title {
+  display: flex;
+  position: absolute;
+  text-align: center;
+  border: solid;
+  border-width: 2px;
+  border-radius: 20px;
+  border-color: black;
+  background-color: burlywood;
+  padding: 10px;
+  
+}
+
+.search-area {
+  margin-top: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+#search-button {
+  height: 30px;
+  border-radius: 10px;
+  margin: 10px;
+  background-color: burlywood;
+}
+
+#search-button:hover {
+  background-color: blanchedalmond;
+  transition: 1s;
+  cursor: pointer;
+}
+
+#search-bar {
+  border-radius: 10px;
+  background-color: burlywood;
+}
+
+#search-bar:hover {
+  background-color: blanchedalmond;
+}
+
+.article {
+
+}
