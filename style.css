@@ -18,17 +18,6 @@ header {
   border-color: black; 
 }
 
-#home {
-  height: 20px;
-  width: 50px;
-  border: solid;
-  border-width: 2px;
-  border-color: black;
-  border-radius: 20px;
-  background-color: burlywood;
-  margin-right: 100px;
-}
-
 #home:hover {
   background-color: blanchedalmond;
   transition: 1s;
@@ -83,10 +72,75 @@ header {
   background-color: blanchedalmond;
 }
 
-.article {
-
+.article-list {
+  border: solid;
+  border-color: black;
+  border-radius: 5px;
+  background-color: chocolate;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 10px;
 }
 
-.article.article-title {
+.article {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: burlywood;
+  border: solid;
+  border-radius: 10px;
+  border-color: black;
+  height: 250px;
+  width: 200px;
+  margin: 70px;
+}
 
+.article:hover{
+  height: 300px;
+  width: 250px;
+  border-color: blanchedalmond;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.article:hover .article-title{
+  border-color: blanchedalmond;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.article-title {
+  word-wrap: break-word;
+  font-size: 90%;
+  border: solid;
+  border-color: black ;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: burlywood;
+  overflow: scroll;
+  height: 50px;
+  width: 100%;
+  padding:0%;
+  margin: 0;
+}
+
+.article-title::-webkit-scrollbar {
+  display: none;
+}
+
+.article-image {
+  height: 100%;
+  max-width: 100%;
+  background-color: burlywood;
+}
+
+article.expanded-article {
+  width: 90%;
+  height: 500px;
+  background-color: inherit;
+  border-radius: inherit;
 }
