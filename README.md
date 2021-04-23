@@ -8,13 +8,21 @@ API: The Current Api to gather the Titles, Descriptions and Article Links of eac
 
 API Snippet: `{
             "id": "939e2e52-3e50-4d12-a7f5-648b0f2c1609",
+            
             "title": "Is Singapore the \"Delaware\" of Southeast Asia?",
+            
             "description": "Many of us are familiar with the advantages of setting up a Singapore-based business, making it an attractive location for startup founders and entrepreneurs in Southeast Asia.\nAside from its benefits, the city-state has also made it relatively easy and quick to incorporate your business in the coun...",
+            
             "url": "https://e27.co/is-singapore-the-delaware-of-sea-20210420/",
+            
             "author": "Andrea Baronchelli",
+            
             "image": "https://e27.co/wp-content/uploads/2021/04/Aspire-foudners.png",
+            
             "language": "en",
+            
             "category": [
+            
                 "business",
                 "regional"
             ],
