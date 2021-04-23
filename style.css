@@ -220,3 +220,27 @@ header {
   cursor: pointer;
 }
 
+@media only screen and (max-width: 750px) {
+  .article-list {
+    border: solid;
+    border-color: black;
+    border-radius: 5px;
+    background-color: chocolate;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 10px;
+  }
+
+  .title-container{
+    font-size: 20px;
+    width: 60%;
+  }
+
+  .image-container{
+  width: 300px;
+  height: 150px;
+  }
+}
