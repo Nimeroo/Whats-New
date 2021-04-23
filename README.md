@@ -7,6 +7,7 @@ App Description: Whats News displays the current top headlines to the user. What
 API: The Current Api to gather the Titles, Descriptions and Article Links of each artricle recieved from the API.
 
 API Snippet: `{
+
             "id": "939e2e52-3e50-4d12-a7f5-648b0f2c1609",
             
             "title": "Is Singapore the \"Delaware\" of Southeast Asia?",
