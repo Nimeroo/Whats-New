@@ -187,10 +187,36 @@ header {
 }
 
 .art-link-container {
+  text-decoration: none;
+  color: black;
   display: inline-block;
   background-color: burlywood;
   border: solid;
   border-radius: 10px;
   border-color: black;
   padding: 5px;
+  margin: 4px;
 }
+
+.art-link-container:hover{
+  background-color: blanchedalmond;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.go-back-container {
+  display: inline-block;
+  background-color: burlywood;
+  border: solid;
+  border-radius: 10px;
+  border-color: black;
+  padding: 4px;
+  margin: 2px;
+}
+
+.go-back-container:hover {
+  background-color: blanchedalmond;
+  transition: 1s;
+  cursor: pointer;
+}
+

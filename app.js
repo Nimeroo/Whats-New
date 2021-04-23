@@ -1,17 +1,37 @@
 const apiKey = "OjmLJWr_2o5EeaRAEureMETgZxVjKKgU2_LrHsLO7xwhPWnB";
 const domain = "https://api.currentsapi.services/v1/";
+const inputSearch = document.querySelector("#search-bar").value;
+let url = `${domain}latest-news?language=en&apiKey=${apiKey}`;
+
+/*
+Latest News Display 
+*/
+
+const initialGet = async () => {
+  try {
+    let response = await axios.get(url);
+    let articles = response.data.news
+    createArticle(articles)
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+initialGet()
+
+/*
+News Display Based on Input
+*/
 
 const articleGet = async (inputSearch) => {
   if (!inputSearch) {
     try {
-      let url = `${domain}latest-news?language=en&apiKey=${apiKey}`;
       let response = await axios.get(url);
       let articles = response.data.news
       createArticle(articles)
     } catch (error) {
       console.log(error)
     }
-
   } else {
     try {
       let url = `${domain}search?keywords=${inputSearch}&language=en&apiKey=${apiKey}`
@@ -21,28 +41,16 @@ const articleGet = async (inputSearch) => {
     } catch (error) {
       console.log(error);
     }
-
   }
 }
 
-const initialGet = async () => {
-  try {
-    let url = `${domain}latest-news?language=en&apiKey=${apiKey}`;
-    let response = await axios.get(url);
-    let articles = response.data.news
-    createArticle(articles)
-  } catch (error) {
-    console.log(error);
-  } finally { }
-}
-
-initialGet()
-
+/*
+Creates containers for each article and adds
+cliking functionality for each container.
+*/
 
 function createArticle(articles) {
-  console.log(articles);
   articles.forEach((article) => {
-    console.log(article)
     const articleList = document.querySelector('.article-list');
     const articleContainer = document.createElement('div');
     const articleTitle = document.createElement('h4');
@@ -56,7 +64,7 @@ function createArticle(articles) {
     articleTitle.innerText = article.title;
     articleTitle.setAttribute("id", article.id);
     articleImage.setAttribute("id", article.id);
-    if (article.image == "None") {
+    if (article.image == "None") {      ///Setting Image deaults
       if (article.category[0] == "academia") {
         articleImage.src = "./lib/Academia.jpg";
       } else if (article.category[0] == "business") {
@@ -104,6 +112,9 @@ function createArticle(articles) {
   });
 }
 
+/*
+Removes articles
+*/
 
 function removeArticle() {
   let articleList = document.querySelector('.article-list');
@@ -113,11 +124,16 @@ function removeArticle() {
   }
 }
 
+/*
+function that runs on article being clicked
+*/
+
 function showArticle(expandedArticle) {
   const articleList = document.querySelector('.article-list');
   removeArticle();
   const articleInfo = `
   <div class="expanded-art-container">
+    <div class="go-back-container">Go Back</div>
     <h1 class="title-container">${expandedArticle.title}</h1>
     <h6 class="author-container"> Written by: ${expandedArticle.author}</h6>
     <img class="image-container" src="${expandedArticle.image}" />
@@ -126,14 +142,21 @@ function showArticle(expandedArticle) {
   </div>
   `
   articleList.insertAdjacentHTML("beforeend", articleInfo);
+  const revert = document.querySelector('.go-back-container');
+  revert.addEventListener("click", () => {
+    removeArticle();
+    articleGet(inputSearch);
+  })
 }
+
+/*
+Search bar and button functionality
+*/
 
 const form = document.querySelector('form');
 form.addEventListener("submit", (e) => {
   e.preventDefault()
   removeArticle()
-  const inputSearch = document.querySelector("#search-bar").value;
-  console.log(inputSearch);
   articleGet(inputSearch);
 });
 
