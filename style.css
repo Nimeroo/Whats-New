@@ -5,6 +5,12 @@
   background-color: bisque;
 }
 
+html, body, main{
+  background-image: linear-gradient(saddlebrown, bisque);
+  background-repeat: no-repeat;
+}
+
+
 header {
   display: flex;
   flex-direction: row;
@@ -93,6 +99,7 @@ header {
   background-size: contain;
   background-color: burlywood;
   border: solid;
+  box-shadow: 5px 10px 8px;
   border-radius: 10px;
   border-color: black;
   height: 250px;
@@ -123,7 +130,7 @@ header {
   border-top-right-radius: 10px;
   background-color: burlywood;
   overflow: scroll;
-  height: 50px;
+  height: 60px;
   width: 100%;
   padding:0%;
   margin: 0;
