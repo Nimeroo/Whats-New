@@ -1,6 +1,5 @@
 const apiKey = "OjmLJWr_2o5EeaRAEureMETgZxVjKKgU2_LrHsLO7xwhPWnB";
 const domain = "https://api.currentsapi.services/v1/";
-const inputSearch = document.querySelector("#search-bar").value;
 let url = `${domain}latest-news?language=en&apiKey=${apiKey}`;
 
 /*
@@ -141,6 +140,7 @@ function showArticle(expandedArticle) {
     <a class="art-link-container" href = ${expandedArticle.url}>Article Page Here</a>
   </div>
   `
+
   articleList.insertAdjacentHTML("beforeend", articleInfo);
   const revert = document.querySelector('.go-back-container');
   revert.addEventListener("click", () => {
@@ -156,6 +156,7 @@ Search bar and button functionality
 const form = document.querySelector('form');
 form.addEventListener("submit", (e) => {
   e.preventDefault()
+  const inputSearch = document.querySelector("#search-bar").value;
   removeArticle()
   articleGet(inputSearch);
 });
