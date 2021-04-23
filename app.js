@@ -54,6 +54,8 @@ function createArticle(articles) {
     articleContainer.append(articleTitle);
     articleContainer.append(articleImage);
     articleTitle.innerText = article.title;
+    articleTitle.setAttribute("id", article.id);
+    articleImage.setAttribute("id", article.id);
     if (article.image == "None") {
       if (article.category[0] == "academia") {
         articleImage.src = "./lib/Academia.jpg";
@@ -93,9 +95,15 @@ function createArticle(articles) {
     } else {
       articleImage.src = article.image
     }
+    articleContainer.addEventListener("click", (e) => {
+      const articleClick = articles.find((art) => {
+        return art.id === e.target.id;
+      })
+      showArticle(articleClick);
+    })
   });
-
 }
+
 
 function removeArticle() {
   let articleList = document.querySelector('.article-list');
@@ -103,6 +111,21 @@ function removeArticle() {
     articleList.removeChild(articleList.firstChild);
 
   }
+}
+
+function showArticle(expandedArticle) {
+  const articleList = document.querySelector('.article-list');
+  removeArticle();
+  const articleInfo = `
+  <div class="expanded-art-container">
+    <h1 class="title-container">${expandedArticle.title}</h1>
+    <h6 class="author-container"> Written by: ${expandedArticle.author}</h6>
+    <img class="image-container" src="${expandedArticle.image}" />
+    <h3 class="desc-container">${expandedArticle.description}</h3>
+    <a class="art-link-container" href = ${expandedArticle.url}>Article Page Here</a>
+  </div>
+  `
+  articleList.insertAdjacentHTML("beforeend", articleInfo);
 }
 
 const form = document.querySelector('form');
