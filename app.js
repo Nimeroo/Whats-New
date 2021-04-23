@@ -1,6 +1,7 @@
 const apiKey = "OjmLJWr_2o5EeaRAEureMETgZxVjKKgU2_LrHsLO7xwhPWnB";
 const domain = "https://api.currentsapi.services/v1/";
 let url = `${domain}latest-news?language=en&apiKey=${apiKey}`;
+const inputSearch = document.querySelector("#search-bar").value;
 
 /*
 Latest News Display 
