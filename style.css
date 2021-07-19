@@ -2,12 +2,10 @@
 
 * {
   font-family: Roboto, Ariel;
-  background-color: bisque;
 }
 
 html, body, main{
-  background-image: linear-gradient(saddlebrown, bisque);
-  background-repeat: no-repeat;
+background-color: whitesmoke;
 }
 
 
@@ -17,77 +15,62 @@ header {
   align-items: center;
   justify-content: center;
   height: 100px;
-  background-color: chocolate;
-  border: solid;
-  border-radius: 5px;
-  border-width: 10px;
-  border-color: black; 
-}
-
-#home:hover {
-  background-color: blanchedalmond;
-  transition: 1s;
-  cursor: pointer;
 }
 
 #title {
   display: flex;
   position: absolute;
   text-align: center;
-  border: solid;
-  border-width: 2px;
-  border-radius: 20px;
-  border-color: black;
-  background-color: burlywood;
   padding: 10px;
   
 }
 
-.search-area {
-  margin-top: 10px;
+#search-container {
+  text-align: center;
   border-radius: 10px;
+  padding: 30px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 #search-button {
-  box-shadow: none;
-  outline: none;
+  background-color: #F1E5AC;
+  text-align: center;
   height: 30px;
-  border-radius: 5px;
-  border-color: black;
+  width:  30px;
   margin: 10px;
-  background-color: burlywood;
+  border-radius: 20px;
+}
+
+#search-button-icon{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  height: 80%;
 }
 
 #search-button:hover {
-  background-color: blanchedalmond;
-  transition: 1s;
+  background-color: #FFD700;
+  transition: 2s;
   cursor: pointer;
 }
 
 #search-bar {
-  outline: none;
-  box-shadow: none;
-  border-color: black;
-  border-radius: 5px;
-  background-color: burlywood;
+  height: 25px;
+  border-radius: 20px;
 }
 
-#search-bar:hover {
-  background-color: blanchedalmond;
-}
 
 .article-list {
-  border: solid;
-  border-color: black;
-  border-radius: 5px;
-  background-color: chocolate;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   flex-direction: row;
+  border-top: 2px solid #F1E5AC;
+  border-bottom: 2px solid #F1E5AC;
   margin: 10px;
 }
 
@@ -95,101 +78,66 @@ header {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-color: burlywood;
-  border: solid;
-  box-shadow: 5px 10px 8px;
-  border-radius: 10px;
-  border-color: black;
-  height: 250px;
+  background-color:  #F1E5AC;
   width: 200px;
   margin: 70px;
+  padding: 10px;
+  -webkit-animation: fadein 2s;
+  cursor: pointer;
 }
 
 .article:hover{
-  height: 300px;
-  width: 250px;
-  border-color: blanchedalmond;
-  transition: 1s;
-  cursor: pointer;
-}
-
-.article:hover .article-title{
-  border-color: blanchedalmond;
-  transition: 1s;
-  cursor: pointer;
+  background-color: #FFD700;
+  transition: 2s;
 }
 
 .article-title {
-  word-wrap: break-word;
-  font-size: 90%;
-  border: solid;
-  border-color: black ;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  background-color: burlywood;
-  overflow: scroll;
+  font-size: 15px;
   height: 60px;
-  width: 100%;
-  padding:0%;
-  margin: 0;
+  width: inherit;
+  padding: inherit;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.article-title::-webkit-scrollbar {
-  display: none;
-}
 
 .article-image {
   height: 100%;
   max-width: 100%;
-  background-color: burlywood;
+  background-color: #F1E5AC;
 }
 
 .expanded-art-container{
   width: 100%;
+  margin-top: 50px;
   display: flex;
   justify-items: center;
   align-items: center;
   justify-content: center;
   align-content: center;
   flex-direction: column;
-  background-color: chocolate;
 }
 
 .image-container {
   display: inline-block;
-  width: 500px;
+  width: 70%;
   height: 300px;
-  border: solid;
-  border-radius: 10px;
-  border-color: black;
 }
 
 .title-container {
   display: inline-block;
-  width: 40%;
-  background-color: burlywood;
-  border: solid;
-  border-radius: 10px;
-  border-color: black;
+  width: 90%;
+
 }
 
 .desc-container {
   display: inline-block;
   width: 90%;
-  background-color: burlywood;
-  border: solid;
-  border-radius: 10px;
-  border-color: black;
 }
 
 .author-container {
   display: inline-block;
-  background-color: burlywood;
-  border: solid;
-  border-radius: 10px;
-  border-color: black;
+  background-color: #F1E5AC;
   padding: 5px;
 }
 
@@ -197,43 +145,33 @@ header {
   text-decoration: none;
   color: black;
   display: inline-block;
-  background-color: burlywood;
-  border: solid;
-  border-radius: 10px;
-  border-color: black;
+  background-color: #F1E5AC;
   padding: 5px;
   margin: 4px;
 }
 
 .art-link-container:hover{
-  background-color: blanchedalmond;
+  background-color: #FFD700;
   transition: 1s;
   cursor: pointer;
 }
 
-.go-back-container {
+
+.back-container {
   display: inline-block;
-  background-color: burlywood;
-  border: solid;
-  border-radius: 10px;
-  border-color: black;
+  background-color: #F1E5AC;
   padding: 4px;
   margin: 2px;
 }
 
-.go-back-container:hover {
-  background-color: blanchedalmond;
+.back-container:hover {
+  background-color: #FFD700;
   transition: 1s;
   cursor: pointer;
 }
 
 @media only screen and (max-width: 750px) {
   .article-list {
-    border: solid;
-    border-color: black;
-    border-radius: 5px;
-    background-color: chocolate;
-    display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -250,4 +188,10 @@ header {
   width: 300px;
   height: 150px;
   }
+}
+
+
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }

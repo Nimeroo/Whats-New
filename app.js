@@ -66,7 +66,7 @@ function createArticle(articles) {
     articleImage.setAttribute("id", article.id);
     if (article.image == "None") {      ///Setting Image deaults
       if (article.category[0] == "academia") {
-        articleImage.src = "./lib/Academia.jpg";
+        articleImage.src = "./lib/Academia.jpg";vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
       } else if (article.category[0] == "business") {
         articleImage.src = "./lib/Buissness.jpg";
       } else if (article.category[0] == "regional") {
@@ -133,7 +133,7 @@ function showArticle(expandedArticle) {
   removeArticle();
   const articleInfo = `
   <div class="expanded-art-container">
-    <div class="go-back-container">Go Back</div>
+    <div class="back-container">Go Back</div>
     <h1 class="title-container">${expandedArticle.title}</h1>
     <h6 class="author-container"> Written by: ${expandedArticle.author}</h6>
     <img class="image-container" src="${expandedArticle.image}" />
@@ -143,7 +143,7 @@ function showArticle(expandedArticle) {
   `
 
   articleList.insertAdjacentHTML("beforeend", articleInfo);
-  const revert = document.querySelector('.go-back-container');
+  const revert = document.querySelector('.back-container');
   revert.addEventListener("click", () => {
     removeArticle();
     articleGet(inputSearch);
