@@ -1,8 +1,17 @@
 const domain = "https://api.currentsapi.services/v1/";
-let url = `${domain}latest-news?language=en&apiKey=${REACT_APP_API_KEY}`;
 
 export const getArticles = async () => {
-    resp = await axios.get(url);
-    articles = resp.data.news
-    return articles;
-}
+  resp = await axios.get(
+    `${domain}latest-news?language=en&apiKey=${REACT_APP_API_KEY}`
+  );
+  articles = resp.data.news;
+  return articles;
+};
+
+export const getSearchedArticles = async (inputSearch) => {
+  resp = await axios.get(
+    `${domain}search?keywords=${inputSearch}&language=en&apiKey=${REACT_APP_API_KEY}`
+  );
+  articles = resp.data.news;
+  return articles;
+};
