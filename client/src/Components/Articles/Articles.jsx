@@ -1,15 +1,10 @@
-import "./Articles.css"
-import { useState } from "react"
+import "./Articles.css";
 
 
-const Articles = ({Articles}) => {
-
-    const [articleList, setArticleList] = useState([])
-    setArticleList(Articles)
-
+const Articles = ({articles}) => {
     return (
         <div>
-            {articleList.map((article) => {
+            {articles.map((article) => {
                 return(
                     <div>
                         <h4 id="article-title">{article.title}</h4>
