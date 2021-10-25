@@ -1,18 +1,46 @@
-import './App.css';
-import { Switch, Route } from 'react-router-dom/cjs/react-router-dom.min';
-import Articlehome from './Screens/ArticleHome/ArticleHome';
-import ArticleDetails from './Screens/ArticleDetails/ArticleDetails';
+import "./App.css";
+import { Switch, Route } from "react-router-dom/cjs/react-router-dom.min";
+import { getArticles, getSearchedArticles } from "./Services/api-config";
+import Articlehome from "./Screens/ArticleHome/ArticleHome";
+import ArticleDetails from "./Screens/ArticleDetails/ArticleDetails";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [articles, setArticles] = useState([]);
+
+  useEffect(() => {
+    const fetchArticles = async () => {
+      const articles = await getArticles();
+      setArticles(articles);
+    };
+    fetchArticles();
+  }, []);
+
+  const fetchSearchedArtciles = async (input) => {
+    const searchedArticles = await getSearchedArticles(input);
+    setArticles(searchedArticles);
+  };
+
+  const getArticle = (id) => {
+   const articleInfo = articles.filter((article) => {
+     if(article.id === id){
+       return article;
+     }
+   }) 
+   return articleInfo;
+  }
 
   return (
     <div className="App">
       <Switch>
         <Route exact path="/">
-          <Articlehome />
+          <Articlehome
+            articles={articles}
+            fetchSearchedArtciles={fetchSearchedArtciles}
+          />
         </Route>
         <Route path="/:id">
-          <ArticleDetails />
+          <ArticleDetails article={getArticle} />
         </Route>
       </Switch>
     </div>
