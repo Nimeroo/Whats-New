@@ -40,7 +40,7 @@ function App() {
           />
         </Route>
         <Route path="/:id">
-          <ArticleDetails article={getArticle} />
+          <ArticleDetails getArticle={getArticle} />
         </Route>
       </Switch>
     </div>
