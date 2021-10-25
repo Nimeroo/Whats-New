@@ -24,7 +24,7 @@ function App() {
   const getArticle = (id) => {
    const articleInfo = articles.filter((article) => {
      if(article.id === id){
-       return article;
+       return article[0];
      }
    }) 
    return articleInfo;
