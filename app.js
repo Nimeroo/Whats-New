@@ -141,7 +141,7 @@ function showArticle(expandedArticle) {
     <a class="art-link-container" href = ${expandedArticle.url}>Article Page Here</a>
   </div>
   `
-
+  console.log(expandedArticle)
   articleList.insertAdjacentHTML("beforeend", articleInfo);
   const revert = document.querySelector('.back-container');
   revert.addEventListener("click", () => {
