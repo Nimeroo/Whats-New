@@ -10,25 +10,21 @@ function App() {
 
   useEffect(() => {
     const fetchArticles = async () => {
-      const articles = await getArticles();
-      setArticles(articles);
+      const articleList = await getArticles();
+      if(articleList){
+        setArticles(articleList);
+      }
+      console.log(articleList);
     };
     fetchArticles();
-  }, []);
+  }, [])
+
+  console.log(articles)
 
   const fetchSearchedArtciles = async (input) => {
     const searchedArticles = await getSearchedArticles(input);
     setArticles(searchedArticles);
   };
-
-  const getArticle = (id) => {
-   const articleInfo = articles.filter((article) => {
-     if(article.id === id){
-       return article[0];
-     }
-   }) 
-   return articleInfo;
-  }
 
   return (
     <div className="App">
@@ -39,8 +35,8 @@ function App() {
             fetchSearchedArtciles={fetchSearchedArtciles}
           />
         </Route>
-        <Route path="/:id">
-          <ArticleDetails getArticle={getArticle} />
+        <Route path="/article/:id">
+          <ArticleDetails articles={articles} />
         </Route>
       </Switch>
     </div>
