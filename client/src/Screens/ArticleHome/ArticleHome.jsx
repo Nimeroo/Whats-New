@@ -1,40 +1,24 @@
 import "./ArticleHome.css";
-import { useEffect, useState } from "react";
-import { getArticles, getSearchedArticles } from "../../Services/api-config";
+import { useState } from "react";
 import Articles from "../../Components/Articles/Articles";
 
-const Articlehome = () => {
-  const [articleList, setArticleList] = useState([]);
-  const [input, setInput ] = useState("")
-
-  useEffect(() => {
-    const fetchArticles = async () => {
-      const articles = await getArticles();
-      setArticleList(articles);
-    };
-    fetchArticles();
-  }, []);
+const Articlehome = ({ articles, fetchSearchedArtciles }) => {
+  const [input, setInput] = useState("");
 
   const handleSumbit = (e) => {
-    const fetchSearchedArtciles = async () => {
-      const searchedArticles = await getSearchedArticles(input);
-      setArticleList(searchedArticles);
-    }
-    fetchSearchedArtciles();
+    fetchSearchedArtciles(input);
     e.preventDefault();
-  }
+  };
 
   return (
     <div>
-      <form
-        onSubmit={handleSumbit}
-      >
+      <form onSubmit={handleSumbit}>
         <label>
           <button type="submit">Search</button>
           <input onChange={(e) => setInput(e.target.value)} />
         </label>
       </form>
-      <Articles articles={articleList} />
+      <Articles articles={articles} />
     </div>
   );
 };
