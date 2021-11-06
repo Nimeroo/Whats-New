@@ -1,4 +1,5 @@
 import "./ArticleDetails.css"
+import thumbnailConverter from "../../Util/thumbnailConverter"
 import { useState, useEffect } from "react"
 import {useParams} from "react-router-dom"
 
@@ -11,18 +12,17 @@ const ArticleDetails = ({ articles }) => {
     if(articleInfo){
       setArticle(articleInfo);
     }
-    console.log(article)
-  }, [id, articles]);
+}, [id, articles]);
 
-  if (!article) {
+if (!article) {
     return <h1>Loading...</h1>
-  }
+}
 
   return (
     <div>
       <h2>{article.title}</h2>
       <h5>{article.author}</h5>
-      <img src={article.image}></img>
+      <img src={thumbnailConverter(article.category, article.image)}></img>
     </div>
   );
 };

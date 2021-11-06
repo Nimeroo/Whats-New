@@ -14,12 +14,9 @@ function App() {
       if(articleList){
         setArticles(articleList);
       }
-      console.log(articleList);
     };
     fetchArticles();
   }, [])
-
-  console.log(articles)
 
   const fetchSearchedArtciles = async (input) => {
     const searchedArticles = await getSearchedArticles(input);
