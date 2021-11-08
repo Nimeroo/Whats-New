@@ -18,7 +18,7 @@ import Sports from "../assets/Sports.jpg"
 import National from "../assets/national.png"
 
 const thumbnailConverter = (category, imageStatus) => {
-    if(imageStatus = "None"){
+    if(imageStatus === "None"){
         switch (category[0]){
             case "academia":
                 return Academia;
@@ -58,7 +58,7 @@ const thumbnailConverter = (category, imageStatus) => {
                 return National;
         }
 
-    }
+    } else return imageStatus;
 }
 
 export default thumbnailConverter;
