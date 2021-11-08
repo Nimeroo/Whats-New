@@ -1,0 +1,19 @@
+#article{
+    background-color: #F1E5AC;
+    text-align: center;
+}
+
+#article:hover{
+    transition: 1.5s;
+    background-color: #FFD700;
+}
+
+#article-link{
+    text-decoration: none;
+}
+
+#article-img{
+    width: 200px;
+    height: 200px;
+}
+
