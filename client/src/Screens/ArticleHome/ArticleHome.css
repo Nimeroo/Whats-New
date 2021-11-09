@@ -1,0 +1,10 @@
+#search-area{
+    text-align: center;
+    margin: 20px;
+}
+
+label {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}

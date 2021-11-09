@@ -1,7 +1,6 @@
 import "./ArticleHome.css";
 import { useState } from "react";
-import TextField from "@mui/material/TextField";
-import IconButton from "@mui/material/IconButton";
+import {Container, TextField, IconButton} from "@mui/material"
 import SearchIcon from "@mui/icons-material/Search";
 import Articles from "../../Components/Articles/Articles";
 
@@ -14,8 +13,8 @@ const Articlehome = ({ articles, fetchSearchedArtciles }) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSumbit}>
+    <Container fixed>
+      <form id="search-area" onSubmit={handleSumbit}>
         <label>
           <IconButton type="submit">
             <SearchIcon />
@@ -27,7 +26,7 @@ const Articlehome = ({ articles, fetchSearchedArtciles }) => {
         </label>
       </form>
       <Articles articles={articles} />
-    </div>
+    </Container>
   );
 };
 
