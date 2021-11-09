@@ -1,5 +1,9 @@
 import "./App.css";
-import { Switch, Route } from "react-router-dom/cjs/react-router-dom.min";
+import {
+  Switch,
+  Route,
+  useHistory,
+} from "react-router-dom/cjs/react-router-dom.min";
 import { getArticles, getSearchedArticles } from "./Services/api-config";
 import Articlehome from "./Screens/ArticleHome/ArticleHome";
 import ArticleDetails from "./Screens/ArticleDetails/ArticleDetails";
@@ -7,16 +11,19 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [articles, setArticles] = useState([]);
+  let history = useHistory();
+
 
   useEffect(() => {
     const fetchArticles = async () => {
       const articleList = await getArticles();
-      if(articleList){
+      if (articleList) {
         setArticles(articleList);
       }
     };
+    history.replace("/home", "/")
     fetchArticles();
-  }, [])
+  }, []);
 
   const fetchSearchedArtciles = async (input) => {
     const searchedArticles = await getSearchedArticles(input);
@@ -26,7 +33,7 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        <Route exact path="/">
+        <Route path="/home">
           <Articlehome
             articles={articles}
             fetchSearchedArtciles={fetchSearchedArtciles}

@@ -1,14 +1,17 @@
 import "./ArticleHome.css";
 import { useState } from "react";
-import {Container, TextField, IconButton} from "@mui/material"
+import { useHistory } from "react-router-dom";
+import { Container, TextField, IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import Articles from "../../Components/Articles/Articles";
 
 const Articlehome = ({ articles, fetchSearchedArtciles }) => {
   const [input, setInput] = useState("");
+  const history = useHistory();
 
   const handleSumbit = (e) => {
     fetchSearchedArtciles(input);
+    history.push(`/home/${input}`)
     e.preventDefault();
   };
 
