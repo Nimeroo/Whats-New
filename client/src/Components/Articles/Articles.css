@@ -4,7 +4,8 @@
 }
 
 #article:hover{
-    transition: 1.5s;
+    transition: 1s;
+    box-shadow: 1px 1px gray;
     background-color: #FFD700;
 }
 
