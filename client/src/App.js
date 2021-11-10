@@ -1,6 +1,5 @@
 import "./App.css";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import { Router } from "react-router";
 import { getArticles, getSearchedArticles } from "./Services/api-config";
 import ArticleHome from "./Screens/ArticleHome/ArticleHome";
 import ArticleDetails from "./Screens/ArticleDetails/ArticleDetails";
@@ -17,7 +16,6 @@ function App() {
         setArticles(articleList);
       }
     };
-    history("/home");
     fetchArticles();
   }, []);
 

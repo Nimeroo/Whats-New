@@ -1,18 +1,20 @@
 import "./ArticleHome.css";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { Container, TextField, IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import Articles from "../../Components/Articles/Articles";
 
 const ArticleHome = ({ articles, fetchSearchedArtciles }) => {
   const [input, setInput] = useState("");
-  const history = useNavigate();
 
   const handleSumbit = (e) => {
     fetchSearchedArtciles(input);
     e.preventDefault();
   };
+
+  if (!articles) {
+    return <h1>Loading...</h1>;
+  }
 
   return (
     <Container fixed>
