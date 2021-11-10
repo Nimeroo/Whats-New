@@ -18,6 +18,7 @@ import Sports from "../assets/Sports.jpg"
 import National from "../assets/national.png"
 import Markets from "../assets/markets.jpg"
 import Business from "../assets/business.jpg"
+import Legal from "../assets/legal.jpg"
 
 
 const thumbnailConverter = (category, imageStatus) => {
@@ -63,6 +64,8 @@ const thumbnailConverter = (category, imageStatus) => {
                 return Markets;
             case "business":
                 return Business;
+            case "legal":
+                return Legal;
         }
 
     } else return imageStatus;
