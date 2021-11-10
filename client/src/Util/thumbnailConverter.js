@@ -16,6 +16,9 @@ import Regional from "../assets/Regional.jpg"
 import Science from "../assets/Science.jpg"
 import Sports from "../assets/Sports.jpg"
 import National from "../assets/national.png"
+import Markets from "../assets/markets.jpg"
+import Business from "../assets/business.jpg"
+
 
 const thumbnailConverter = (category, imageStatus) => {
     if(imageStatus === "None"){
@@ -56,6 +59,10 @@ const thumbnailConverter = (category, imageStatus) => {
                 return Sports;
             case "national":
                 return National;
+            case "markets":
+                return Markets;
+            case "business":
+                return Business;
         }
 
     } else return imageStatus;
