@@ -1,18 +1,14 @@
 import "./App.css";
-import {
-  Switch,
-  Route,
-  useHistory,
-} from "react-router-dom/cjs/react-router-dom.min";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import { Router } from "react-router";
 import { getArticles, getSearchedArticles } from "./Services/api-config";
-import Articlehome from "./Screens/ArticleHome/ArticleHome";
+import ArticleHome from "./Screens/ArticleHome/ArticleHome";
 import ArticleDetails from "./Screens/ArticleDetails/ArticleDetails";
 import { useEffect, useState } from "react";
 
 function App() {
   const [articles, setArticles] = useState([]);
-  let history = useHistory();
-
+  let history = useNavigate();
 
   useEffect(() => {
     const fetchArticles = async () => {
@@ -21,7 +17,7 @@ function App() {
         setArticles(articleList);
       }
     };
-    history.replace("/home", "/")
+    history("/home");
     fetchArticles();
   }, []);
 
@@ -32,17 +28,21 @@ function App() {
 
   return (
     <div className="App">
-      <Switch>
-        <Route path="/home">
-          <Articlehome
-            articles={articles}
-            fetchSearchedArtciles={fetchSearchedArtciles}
+        <Routes>
+          <Route
+            path="/home"
+            element={
+              <ArticleHome
+                articles={articles}
+                fetchSearchedArtciles={fetchSearchedArtciles}
+              />
+            }
           />
-        </Route>
-        <Route path="/article/:id">
-          <ArticleDetails articles={articles} />
-        </Route>
-      </Switch>
+          <Route
+            path="/article/:id"
+            element={<ArticleDetails articles={articles} />}
+          />
+        </Routes>
     </div>
   );
 }

@@ -1,14 +1,14 @@
 import "./ArticleDetails.css";
 import thumbnailConverter from "../../Util/thumbnailConverter";
-import { Typography, Button, Container } from "@mui/material";
+import { Typography } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useState, useEffect } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Box } from "@mui/system";
 
 const ArticleDetails = ({ articles }) => {
   const [article, setArticle] = useState(null);
-  let history = useHistory();
+  let history = useNavigate();
   const { id } = useParams();
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const ArticleDetails = ({ articles }) => {
   return (
     <div id="article-details-container">
       <Box id="article-details">
-        <ArrowBackIcon id="back-arrow" onClick={() => history.goBack()}>
+        <ArrowBackIcon id="back-arrow" onClick={() => history(-1)}>
           Go Back
         </ArrowBackIcon>
         <Typography>{article.title}</Typography>

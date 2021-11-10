@@ -1,17 +1,16 @@
 import "./ArticleHome.css";
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Container, TextField, IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import Articles from "../../Components/Articles/Articles";
 
-const Articlehome = ({ articles, fetchSearchedArtciles }) => {
+const ArticleHome = ({ articles, fetchSearchedArtciles }) => {
   const [input, setInput] = useState("");
-  const history = useHistory();
+  const history = useNavigate();
 
   const handleSumbit = (e) => {
     fetchSearchedArtciles(input);
-    history.push(`/home/${input}`)
     e.preventDefault();
   };
 
@@ -33,4 +32,4 @@ const Articlehome = ({ articles, fetchSearchedArtciles }) => {
   );
 };
 
-export default Articlehome;
+export default ArticleHome;
