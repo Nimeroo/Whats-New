@@ -18,6 +18,10 @@ const ArticleDetails = ({ articles }) => {
     }
   }, [id, articles]);
 
+  if (!article) {
+    return <h1>Loading...</h1>;
+  }
+
   return (
     <div id="article-details-container">
       <Box id="article-details">
