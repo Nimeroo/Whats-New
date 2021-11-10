@@ -1,5 +1,6 @@
 import "./App.css";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import Landing from "./Screens/Landing";
 import { getArticles, getSearchedArticles } from "./Services/api-config";
 import ArticleHome from "./Screens/ArticleHome/ArticleHome";
 import ArticleDetails from "./Screens/ArticleDetails/ArticleDetails";
@@ -7,7 +8,6 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [articles, setArticles] = useState([]);
-  let history = useNavigate();
 
   useEffect(() => {
     const fetchArticles = async () => {
@@ -26,21 +26,22 @@ function App() {
 
   return (
     <div className="App">
-        <Routes>
-          <Route
-            path="/home"
-            element={
-              <ArticleHome
-                articles={articles}
-                fetchSearchedArtciles={fetchSearchedArtciles}
-              />
-            }
-          />
-          <Route
-            path="/article/:id"
-            element={<ArticleDetails articles={articles} />}
-          />
-        </Routes>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route
+          path="/home"
+          element={
+            <ArticleHome
+              articles={articles}
+              fetchSearchedArtciles={fetchSearchedArtciles}
+            />
+          }
+        />
+        <Route
+          path="/article/:id"
+          element={<ArticleDetails articles={articles} />}
+        />
+      </Routes>
     </div>
   );
 }
