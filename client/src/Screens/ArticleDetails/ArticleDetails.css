@@ -1,10 +1,10 @@
 #article-details-container{
-    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     min-height: 100vh;
+    margin-top: 1%;
 }
 
 #article-details{
@@ -14,7 +14,7 @@
     background-color: #FFD700;
 }
 
-#article-details > *{
+#article-details > * {
     margin: 1%;
 }
 

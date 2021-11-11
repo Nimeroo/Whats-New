@@ -4,6 +4,14 @@
     font-family: 'Karla', sans-serif;
 }
 
+.App{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
 root{
     background-color: #FAF9F6;
 }
+
