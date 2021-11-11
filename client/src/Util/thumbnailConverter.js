@@ -21,6 +21,7 @@ import Business from "../assets/business.jpg";
 import Legal from "../assets/legal.jpg";
 import Celebrity from "../assets/celebrity.jpg";
 import Industry from "../assets/industry.jpeg";
+import Default from "../assets/default.jpg"
 
 const thumbnailConverter = (category, imageStatus) => {
   if (imageStatus === "None") {
@@ -72,7 +73,7 @@ const thumbnailConverter = (category, imageStatus) => {
       case "industry":
         return Industry;
       default:
-        return null;
+        return Default;
     }
   } else return imageStatus;
 };
