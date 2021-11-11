@@ -8,7 +8,7 @@ const Articles = ({ articles }) => {
     <Grid alignItems="center" justifyContent="center" container spacing={5}>
       {articles.map((article) => {
         return (
-          <Grid item xs={4} key={article.id}>
+          <Grid item xs={12} sm={6} md={4} key={article.id}>
             <Link id="article-link" to={`/article/${article.id}`}>
               <Paper elevation={1} id="article">
                 <Typography
