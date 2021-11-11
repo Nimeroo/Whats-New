@@ -32,6 +32,7 @@ const ArticleDetails = ({ articles }) => {
         <Typography>{article.author}</Typography>
         <img
           id="article-image"
+          alt={article.category[0]}
           src={thumbnailConverter(article.category, article.image)}
         ></img>
         <Typography>{article.description}</Typography>

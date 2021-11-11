@@ -24,6 +24,7 @@ const Articles = ({ articles }) => {
                 </Typography>
                 <img
                   id="article-img"
+                  alt={article.category[0]}
                   src={thumbnailConverter(article.category, article.image)}
                 ></img>
               </Paper>
