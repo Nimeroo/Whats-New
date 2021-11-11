@@ -1,4 +1,5 @@
-https://nimeroo.github.io/Whats-New/
+Deployed Site:
+https://infallible-agnesi-f3c825.netlify.app/
 
 # Whats-New
 
