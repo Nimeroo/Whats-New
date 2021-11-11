@@ -29,7 +29,7 @@ const ArticleDetails = ({ articles }) => {
           Go Back
         </ArrowBackIcon>
         <Typography>{article.title}</Typography>
-        <Typography>{article.author}</Typography>
+        <Typography>Written by:{article.author}</Typography>
         <img
           id="article-image"
           alt={article.category[0]}
