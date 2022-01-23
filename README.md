@@ -5,6 +5,8 @@ https://infallible-agnesi-f3c825.netlify.app/
 
 App Title: Whats News
 
+Languages/Frameworks Used: HTML, CSS, Javascript and React.
+
 App Description: Whats News displays the current top headlines to the user. Whats News allows the user to search up topics that they are most interested in. 
 
 API: The Current Api to gather the Titles, Descriptions and Article Links of each artricle recieved from the API.
