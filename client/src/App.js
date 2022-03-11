@@ -1,6 +1,5 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Landing from "./Screens/Landing";
 import { getArticles, getSearchedArticles } from "./Services/api-config";
 import ArticleHome from "./Screens/ArticleHome/ArticleHome";
 import ArticleDetails from "./Screens/ArticleDetails/ArticleDetails";
@@ -29,16 +28,10 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route
-          path="/home"
-          element={
-            <ArticleHome
-              articles={articles}
-              fetchSearchedArtciles={fetchSearchedArtciles}
-            />
-          }
-        />
+        <Route path="/" element={<ArticleHome
+          articles={articles}
+          fetchSearchedArtciles={fetchSearchedArtciles}
+        />} />
         <Route
           path="/article/:id"
           element={<ArticleDetails articles={articles} />}
