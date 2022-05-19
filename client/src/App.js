@@ -19,18 +19,17 @@ function App() {
     fetchArticles();
   }, []);
 
-  const fetchSearchedArtciles = async (input) => {
+  const fetchSearchedArticles = async (input) => {
     const searchedArticles = await getSearchedArticles(input);
     setArticles(searchedArticles);
   };
 
   return (
     <div className="App">
-      <Header />
+      <Header fetchSearchedArticles={fetchSearchedArticles}/>
       <Routes>
         <Route path="/" element={<ArticleHome
           articles={articles}
-          fetchSearchedArtciles={fetchSearchedArtciles}
         />} />
         <Route
           path="/article/:id"
