@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import Header from "./Components/Header/Header";
 
 function App() {
-  const [articles, setArticles] = useState([]);
+  const [articles, setArticles] = useState(null);
 
   useEffect(() => {
     const fetchArticles = async () => {
@@ -20,17 +20,16 @@ function App() {
   }, []);
 
   const fetchSearchedArticles = async (input) => {
+    setArticles([]);
     const searchedArticles = await getSearchedArticles(input);
     setArticles(searchedArticles);
   };
 
   return (
     <div className="App">
-      <Header fetchSearchedArticles={fetchSearchedArticles}/>
+      <Header fetchSearchedArticles={fetchSearchedArticles} />
       <Routes>
-        <Route path="/" element={<ArticleHome
-          articles={articles}
-        />} />
+        <Route path="/" element={<ArticleHome articles={articles} />} />
         <Route
           path="/article/:id"
           element={<ArticleDetails articles={articles} />}
