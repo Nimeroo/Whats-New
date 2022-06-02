@@ -8,6 +8,7 @@ import Header from "./Components/Header/Header";
 
 function App() {
   const [articles, setArticles] = useState(null);
+  const [headlines, setHeadlines] = useState(true);
 
   useEffect(() => {
     const fetchArticles = async () => {
@@ -20,8 +21,9 @@ function App() {
   }, []);
 
   const fetchSearchedArticles = async (input) => {
-    setArticles([]);
+    setArticles(null);
     const searchedArticles = await getSearchedArticles(input);
+    input ? setHeadlines(false) : setHeadlines(true);
     setArticles(searchedArticles);
   };
 
@@ -29,7 +31,10 @@ function App() {
     <div className="App">
       <Header fetchSearchedArticles={fetchSearchedArticles} />
       <Routes>
-        <Route path="/" element={<ArticleHome articles={articles} />} />
+        <Route
+          path="/"
+          element={<ArticleHome headlines={headlines} articles={articles} />}
+        />
         <Route
           path="/article/:id"
           element={<ArticleDetails articles={articles} />}
