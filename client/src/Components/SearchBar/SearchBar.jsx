@@ -15,7 +15,6 @@ export const SearchBar = ({ fetchSearchedArticles }) => {
   return (
     <div className="search-area">
       <form onSubmit={handleSumbit}>
-        <label>
           <IconButton type="submit">
             <SearchIcon fontSize="small" />
           </IconButton>
@@ -24,7 +23,6 @@ export const SearchBar = ({ fetchSearchedArticles }) => {
             label="Search topics and headlines"
             onChange={(e) => setInput(e.target.value)}
           />
-        </label>
       </form>
     </div>
   );
