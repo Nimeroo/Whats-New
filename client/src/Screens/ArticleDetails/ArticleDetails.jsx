@@ -36,7 +36,7 @@ const ArticleDetails = ({ articles }) => {
           src={thumbnailConverter(article.category, article.image)}
         ></img>
         <Typography>{article.description}</Typography>
-        <a id="article-url" href={article.url}>
+        <a id="article-url" href={article.url} target="_blank">
           Full Article Page Here
         </a>
       </Box>
