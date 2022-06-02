@@ -9,6 +9,7 @@ import Header from "./Components/Header/Header";
 function App() {
   const [articles, setArticles] = useState(null);
   const [headlines, setHeadlines] = useState(true);
+  const [searchedInput, setSearchedInput] = useState("")
 
   useEffect(() => {
     const fetchArticles = async () => {
@@ -22,6 +23,7 @@ function App() {
 
   const fetchSearchedArticles = async (input) => {
     setArticles(null);
+    setSearchedInput(input)
     const searchedArticles = await getSearchedArticles(input);
     input ? setHeadlines(false) : setHeadlines(true);
     setArticles(searchedArticles);
@@ -33,7 +35,7 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<ArticleHome headlines={headlines} articles={articles} />}
+          element={<ArticleHome headlines={headlines} input={searchedInput} articles={articles} />}
         />
         <Route
           path="/article/:id"
