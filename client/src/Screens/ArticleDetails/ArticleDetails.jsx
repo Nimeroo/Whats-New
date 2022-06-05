@@ -4,7 +4,7 @@ import { Typography } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { Box } from "@mui/system";
+import { Box, Container } from "@mui/system";
 
 const ArticleDetails = ({ articles }) => {
   const [article, setArticle] = useState(null);
@@ -23,24 +23,26 @@ const ArticleDetails = ({ articles }) => {
   }
 
   return (
-    <div id="article-details-container">
-      <Box id="article-details">
-        <ArrowBackIcon id="back-arrow" onClick={() => history(-1)}>
+    <Container fixed>
+        <ArrowBackIcon className="article-details__block__back-button" onClick={() => history(-1)}>
           Go Back
         </ArrowBackIcon>
-        <Typography>{article.title}</Typography>
-        <Typography>Written by: {article.author}</Typography>
+      <Box className="article-details__block">
+        <div className="article-details__block__title">
+          <Typography variant="h3" align="left" fontWeight="bold" marginBottom="5px">{article.title}</Typography>
+          <Typography variant="h5" align="left" fontStyle="italic">Written by: {article.author}</Typography>
+        </div>
         <img
-          id="article-image"
+          className="article-details__block__image"
           alt={article.category[0]}
           src={thumbnailConverter(article.category, article.image)}
         ></img>
-        <Typography>{article.description}</Typography>
-        <a id="article-url" href={article.url} target="_blank">
-          Full Article Page Here
+        <Typography variant="h5" align="left" width="95%">{article.description}</Typography>
+        <a className="article-details__block__url" href={article.url} target="_blank">
+          Click here to read more.
         </a>
       </Box>
-    </div>
+    </Container>
   );
 };
 
