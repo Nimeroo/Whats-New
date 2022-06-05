@@ -7,10 +7,10 @@ const ArticleHome = ({ articles, headlines, input }) => {
   return (
     <div>
       {articles && (
-        <Container fixed>
-          {headlines && <div className="headline__label">Headlines</div>}
+        <Container className="article__block" fixed>
+          {headlines && <div className="headline__block__label">Headlines</div>}
           {input && (
-            <div className="headline__label">{`Articles related to "${input}"`}</div>
+            <div className="headline__block__label">{`Articles related to "${input}"`}</div>
           )}
           <Articles articles={articles} />
         </Container>
