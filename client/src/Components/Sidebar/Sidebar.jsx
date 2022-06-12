@@ -17,6 +17,7 @@ export const Sidebar = ({ categories, fetchSearchedArticlesByCategory }) => {
           return (
             <li
               onClick={(e) => {
+                fetchSearchedArticlesByCategory(category);
                 let currCategory = e.target.innerHTML.toLowerCase();
                 let prevCategory = document.getElementsByClassName(
                   "sidebar__block__categories__selected"
@@ -25,7 +26,6 @@ export const Sidebar = ({ categories, fetchSearchedArticlesByCategory }) => {
                 if (currCategory !== prevCategory.innerHTML.toLowerCase()) {
                   prevCategory.className = "";
                 }
-                fetchSearchedArticlesByCategory(category);
               }}
               key={category}
             >
