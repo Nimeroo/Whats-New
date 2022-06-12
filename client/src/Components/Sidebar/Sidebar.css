@@ -1,0 +1,25 @@
+.sidebar__block__categories {
+  flex-direction: column;
+  align-items: flex-start;
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar__block__categories > * {
+  width: 90%;
+  margin-top: 10px;
+  padding-left: 15px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.sidebar__block__categories > *:hover {
+  transition: 0.5s;
+  background-color: #ffd700;
+  border-right: 2px solid gray;
+}
+
+.sidebar__block__categories__selected {
+    background-color: #ffd700;
+}
