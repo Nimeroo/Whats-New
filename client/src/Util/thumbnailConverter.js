@@ -26,7 +26,7 @@ import Comedy from "../assets/comedy.png"
 import Default from "../assets/default.jpg"
 
 const thumbnailConverter = (category, imageStatus) => {
-  if (imageStatus === "None") {
+  if (imageStatus === "None" || !imageStatus) {
     switch (category[0]) {
       case "academia":
         return Academia;
