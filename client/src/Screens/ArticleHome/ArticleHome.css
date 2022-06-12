@@ -1,7 +1,33 @@
-.headline__block__label{
+.home__block{
+  display: flex;
+}
+
+#article__block {
+  margin-right: 0px;
+}
+
+.article__block__label{
   margin-bottom: 5px;
   border-bottom: solid 1px gray;
   text-align: left;
   font-size: 45px;
   font-weight: bold;
+}
+
+#sidebar__block{
+  position: fixed; 
+  height: 90%;
+  width: 10em;
+  margin-top: -45px;
+  padding: 0px;
+  overflow: hidden;
+  background-color: #f1e5ac;
+}
+
+#sidebar__block:hover{
+  overflow-y: scroll;
+}
+
+#article-skeleton__block{
+  margin-right: 0px;
 }
