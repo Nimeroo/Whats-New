@@ -18,7 +18,7 @@ const Header = ({ fetchSearchedArticles }) => {
 
   return (
     <Toolbar sx={{ boxShadow: navShadow }} id="header">
-      <Link to="/">
+      <Link to="/" onClick={() => fetchSearchedArticles("")}>
         <img className="header__logo" src={Logo} alt="logo"></img>
         <h2 className="header__title">Whats News</h2>
       </Link>
