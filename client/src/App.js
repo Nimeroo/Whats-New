@@ -2,9 +2,9 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import {
   getArticleCategories,
+  getArticleLang,
+  getArticleRegions,
   getArticles,
-  getSearchedArticles,
-  getSearchedArticlesByCategories,
 } from "./Services/api-config";
 import ArticleHome from "./Screens/ArticleHome/ArticleHome";
 import ArticleDetails from "./Screens/ArticleDetails/ArticleDetails";
@@ -17,8 +17,25 @@ function App() {
   const [categories, setCategories] = useState(null);
   const [headlines, setHeadlines] = useState(true);
   const [searchedInput, setSearchedInput] = useState("");
+  const [languages, setLanguages] = useState([]);
+  const [regions, setRegions] = useState([]);
+  const [language, setLanguage] = useState("en");
+  const [region, setRegion] = useState("INT");
+  const [category, setCategory] = useState("");
 
   useEffect(() => {
+    const fetchLanguages = async () => {
+      const languageList = await getArticleLang();
+      if (languageList) {
+        setLanguages(languageList);
+      }
+    };
+    const fetchRegions = async () => {
+      const regionList = await getArticleRegions();
+      if (regionList) {
+        setRegions(regionList.regions);
+      }
+    };
     const fetchCategories = async () => {
       const categoryList = await getArticleCategories();
       if (categoryList) {
@@ -26,49 +43,39 @@ function App() {
       }
     };
     const fetchArticles = async () => {
-      const articleList = await getArticles();
-      if (articleList) {
+      const articleList = await getArticles(searchedInput, category, language, region);
+      console.log(searchedInput)
+      searchedInput ? setHeadlines(false) : setHeadlines(true);
+      if (articleList || searchedInput) {
         setArticles(articleList.news);
         setArticleStatus(articleList.status);
       }
     };
+    setArticles(null);
+    fetchLanguages();
+    fetchRegions();
     fetchCategories();
     fetchArticles();
-  }, []);
-
-  const fetchSearchedArticles = async (input) => {
-    setArticles(null);
-    setSearchedInput(input);
-    const searchedArticles = await getSearchedArticles(input);
-    input ? setHeadlines(false) : setHeadlines(true);
-    setArticles(searchedArticles.news);
-    setArticleStatus(searchedArticles.status);
-  };
-
-  const fetchSearchedArticlesByCategory = async (category) => {
-    setArticles(null);
-    const filteredArticles = await getSearchedArticlesByCategories(
-      searchedInput,
-      category
-    );
-    setArticles(filteredArticles.news);
-    setArticleStatus(filteredArticles.status);
-  };
+  }, [category, language, region, searchedInput]);
 
   return (
     <div className="App">
-      <Header fetchSearchedArticles={fetchSearchedArticles} />
+      <Header setSearchedInput={setSearchedInput} />
       <Routes>
         <Route
           path="/"
           element={
             <ArticleHome
-              fetchSearchedArticlesByCategory={fetchSearchedArticlesByCategory}
+              setCategory={setCategory}
               headlines={headlines}
               input={searchedInput}
               articles={articles}
               articleStatus={articleStatus}
               categories={categories}
+              languages={languages}
+              setLanguage={setLanguage}
+              regions={regions}
+              setRegion={setRegion}
             />
           }
         />
