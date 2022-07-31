@@ -10,15 +10,23 @@ const ArticleHome = ({
   headlines,
   input,
   categories,
-  fetchSearchedArticlesByCategory,
+  setCategory,
+  languages,
+  setLanguage,
+  regions,
+  setRegion,
 }) => {
   return (
     <div className="home__block">
       {categories && (
         <Container id="sidebar__block" fixed>
           <Sidebar
-            fetchSearchedArticlesByCategory={fetchSearchedArticlesByCategory}
+            setCategory={setCategory}
             categories={categories}
+            languages={languages}
+            setLanguage={setLanguage}
+            regions={regions}
+            setRegion={setRegion}
           />
         </Container>
       )}
