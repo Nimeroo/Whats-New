@@ -5,7 +5,7 @@ import Logo from "../../assets/Whats-news-logo.png";
 import { Link } from "react-router-dom";
 import { Toolbar } from "@mui/material";
 
-const Header = ({ fetchSearchedArticles }) => {
+const Header = ({ setSearchedInput }) => {
   const [navShadow, setNavShadow] = useState(0);
 
   window.onscroll = () => {
@@ -24,13 +24,13 @@ const Header = ({ fetchSearchedArticles }) => {
           document.getElementsByClassName(
             "sidebar__block__categories__selected"
           )[0].className = "";
-          fetchSearchedArticles("");
+          setSearchedInput("");
         }}
       >
         <img className="header__logo" src={Logo} alt="logo"></img>
         <h2 className="header__title">Whats News</h2>
       </Link>
-      <SearchBar fetchSearchedArticles={fetchSearchedArticles} />
+      <SearchBar setSearchedInput={setSearchedInput} />
     </Toolbar>
   );
 };
