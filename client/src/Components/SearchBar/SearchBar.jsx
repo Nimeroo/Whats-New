@@ -5,14 +5,14 @@ import "./SearchBar.css";
 import { IconButton, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
-export const SearchBar = ({ fetchSearchedArticles }) => {
+export const SearchBar = ({ setSearchedInput }) => {
   let history = useNavigate();
   const [input, setInput] = useState("");
 
   const handleSumbit = (e) => {
     e.preventDefault();
     history("/", { replace: true })
-    fetchSearchedArticles(input);
+    setSearchedInput(input);
   };
 
   return (
